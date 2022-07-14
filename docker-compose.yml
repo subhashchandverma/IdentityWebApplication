@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  #kronessqldb:
+  #  image: mcr.microsoft.com/mssql/server
+
+  iam.identity:
+    image: ${DOCKER_REGISTRY-}identitywebapplication
+    build:
+      context: .
+      dockerfile: Dockerfile
