@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Server.Kestrel.Https;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-//string certificateFileName = "ssl-iam-identity-docker.pfx";
-//string completeFilePath = Path.Join("/usr/local/share/ca-certificates/", certificateFileName);
+//string certificateFileName = "testcert.pfx";
+//string completeFilePath = Path.Join("certificate", certificateFileName);
 ////string completeFilePath = @"C:\Users\subhash1202\source\repos\IdentityWebApplication\ssl-iam-identity-docker.pfx";
 //if (File.Exists(completeFilePath))
 //{
@@ -16,7 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 //    {
 //        serverOptions.Listen(IPAddress.Any, 5005, listenOptions =>
 //        {
-//            listenOptions.UseHttps(completeFilePath, "eEtNrrgzIApOTWglaySv");
+//            listenOptions.UseHttps(completeFilePath, "testbar");
 //        });
 //    });
 //}
