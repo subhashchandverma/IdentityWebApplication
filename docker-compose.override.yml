@@ -28,10 +28,10 @@ services:
         #ipv4_address: 172:16.238.4
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_URLS=https://+:5005;http://+:80
       - ASPNETCORE_HTTPS_PORT=5005
-      - ASPNETCORE_Kestrel__Certificates__Default__Password=testbar
-      - ASPNETCORE_Kestrel__Certificates__Default__Path=/app/certificate/testcert.pfx  
+      #- ASPNETCORE_Kestrel__Certificates__Default__Password=testbar
+      #- ASPNETCORE_Kestrel__Certificates__Default__Path=/app/certificate/testcert.pfx  
       #- ASPNETCORE_Kestrel__Certificates__Default__Password=eEtNrrgzIApOTWglaySv
       #- ASPNETCORE_Kestrel__Certificates__Default__Path=/usr/local/share/ca-certificates/ssl-iam-identity-docker.pfx      
       - "ConnectionStrings:DBConnection=Server=kronessqldb;Database=ID4db;User ID=sa;"
@@ -41,7 +41,7 @@ services:
       #- reverseproxy
     ports:
       - "8001:80"
-      - "5005:443"
+      - "5005:5005"
     volumes:
       - app-data-1:/app/logs
       #- ./https/ssl-iam-identity-docker.pfx:/https/aspnetapp.pfx:ro

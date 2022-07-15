@@ -6,20 +6,20 @@ using Microsoft.AspNetCore.Server.Kestrel.Https;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-//string certificateFileName = "testcert.pfx";
-//string completeFilePath = Path.Join("certificate", certificateFileName);
-////string completeFilePath = @"C:\Users\subhash1202\source\repos\IdentityWebApplication\ssl-iam-identity-docker.pfx";
-//if (File.Exists(completeFilePath))
-//{
-//    Console.Write($"File found at path: {completeFilePath}");
-//    builder.WebHost.ConfigureKestrel((context, serverOptions) =>
-//    {
-//        serverOptions.Listen(IPAddress.Any, 5005, listenOptions =>
-//        {
-//            listenOptions.UseHttps(completeFilePath, "testbar");
-//        });
-//    });
-//}
+string certificateFileName = "testcert.pfx";
+string completeFilePath = Path.Join("certificate", certificateFileName);
+//string completeFilePath = @"C:\Users\subhash1202\source\repos\IdentityWebApplication\ssl-iam-identity-docker.pfx";
+if (File.Exists(completeFilePath))
+{
+    Console.Write($"File found at path: {completeFilePath}");
+    builder.WebHost.ConfigureKestrel((context, serverOptions) =>
+    {
+        serverOptions.Listen(IPAddress.Any, 5005, listenOptions =>
+        {
+            listenOptions.UseHttps(completeFilePath, "testbar");
+        });
+    });
+}
 //else if (File.Exists(certificateFileName))
 //{
 //    Console.Write($"File found at path: {certificateFileName}");
